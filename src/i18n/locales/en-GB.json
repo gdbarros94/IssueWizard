@@ -16,7 +16,9 @@
     "bulkUpload": "Bulk Upload",
     "logout": "Logout",
     "language": "Language",
-    "user": "User"
+    "user": "User",
+    "themeMode": "Toggle Dark/Light Mode",
+    "themeVariant": "Theme Variant"
   },
   "repositorySelector": {
     "title": "Select a Repository",

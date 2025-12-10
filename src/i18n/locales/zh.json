@@ -16,7 +16,9 @@
     "bulkUpload": "批量上传",
     "logout": "退出",
     "language": "语言",
-    "user": "用户"
+    "user": "用户",
+    "themeMode": "切换深色/浅色模式",
+    "themeVariant": "主题变体"
   },
   "repositorySelector": {
     "title": "选择仓库",

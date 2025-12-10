@@ -11,19 +11,35 @@ import {
   Tooltip,
   Menu,
   MenuItem,
+  ListItemIcon,
+  ListItemText,
 } from '@mui/material';
-import { GitHub, Add, CloudUpload, Logout, AccountCircle, Language } from '@mui/icons-material';
+import { 
+  GitHub, 
+  Add, 
+  CloudUpload, 
+  Logout, 
+  AccountCircle, 
+  Language,
+  Brightness4,
+  Brightness7,
+  Palette,
+  Check,
+} from '@mui/icons-material';
 import { useNavigate, Outlet } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useApp } from '../contexts/AppContext';
+import { useTheme } from '../contexts/ThemeContext';
 import RepositorySelector from './RepositorySelector';
 
 const Dashboard = () => {
   const { t, i18n } = useTranslation();
   const { user, handleLogout } = useApp();
+  const { mode, variant, toggleMode, setThemeVariant, getAvailableThemes } = useTheme();
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [langAnchorEl, setLangAnchorEl] = React.useState(null);
+  const [themeAnchorEl, setThemeAnchorEl] = React.useState(null);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -50,6 +66,19 @@ const Dashboard = () => {
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang);
     handleLangClose();
+  };
+
+  const handleThemeMenu = (event) => {
+    setThemeAnchorEl(event.currentTarget);
+  };
+
+  const handleThemeClose = () => {
+    setThemeAnchorEl(null);
+  };
+
+  const handleThemeVariantChange = (newVariant) => {
+    setThemeVariant(newVariant);
+    handleThemeClose();
   };
 
   const languages = [
@@ -110,6 +139,43 @@ const Dashboard = () => {
                 selected={i18n.language === lang.code}
               >
                 {lang.name}
+              </MenuItem>
+            ))}
+          </Menu>
+
+          <Tooltip title={t('dashboard.themeMode')}>
+            <IconButton
+              size="large"
+              onClick={toggleMode}
+              color="inherit"
+            >
+              {mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
+            </IconButton>
+          </Tooltip>
+
+          <Tooltip title={t('dashboard.themeVariant')}>
+            <IconButton
+              size="large"
+              onClick={handleThemeMenu}
+              color="inherit"
+            >
+              <Palette />
+            </IconButton>
+          </Tooltip>
+          <Menu
+            anchorEl={themeAnchorEl}
+            open={Boolean(themeAnchorEl)}
+            onClose={handleThemeClose}
+          >
+            {getAvailableThemes().map((theme) => (
+              <MenuItem
+                key={theme.key}
+                onClick={() => handleThemeVariantChange(theme.key)}
+              >
+                <ListItemIcon>
+                  {variant === theme.key && <Check />}
+                </ListItemIcon>
+                <ListItemText>{theme.name}</ListItemText>
               </MenuItem>
             ))}
           </Menu>

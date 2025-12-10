@@ -16,7 +16,9 @@
     "bulkUpload": "थोक अपलोड",
     "logout": "लॉगआउट",
     "language": "भाषा",
-    "user": "उपयोगकर्ता"
+    "user": "उपयोगकर्ता",
+    "themeMode": "डार्क/लाइट मोड टॉगल करें",
+    "themeVariant": "थीम वेरिएंट"
   },
   "repositorySelector": {
     "title": "एक रिपॉज़िटरी चुनें",

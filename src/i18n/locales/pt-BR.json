@@ -16,7 +16,9 @@
     "bulkUpload": "Upload em Massa",
     "logout": "Sair",
     "language": "Idioma",
-    "user": "Usuário"
+    "user": "Usuário",
+    "themeMode": "Alternar Modo Escuro/Claro",
+    "themeVariant": "Variação de Tema"
   },
   "repositorySelector": {
     "title": "Selecione um Repositório",
