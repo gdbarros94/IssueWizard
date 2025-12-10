@@ -16,7 +16,9 @@
     "bulkUpload": "一括アップロード",
     "logout": "ログアウト",
     "language": "言語",
-    "user": "ユーザー"
+    "user": "ユーザー",
+    "themeMode": "ダーク/ライトモード切り替え",
+    "themeVariant": "テーマバリエーション"
   },
   "repositorySelector": {
     "title": "リポジトリを選択",

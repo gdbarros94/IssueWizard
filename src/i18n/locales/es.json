@@ -16,7 +16,9 @@
     "bulkUpload": "Carga Masiva",
     "logout": "Cerrar Sesión",
     "language": "Idioma",
-    "user": "Usuario"
+    "user": "Usuario",
+    "themeMode": "Alternar Modo Oscuro/Claro",
+    "themeVariant": "Variación de Tema"
   },
   "repositorySelector": {
     "title": "Selecciona un Repositorio",

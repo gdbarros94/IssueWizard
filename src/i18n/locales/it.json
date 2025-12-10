@@ -16,7 +16,9 @@
     "bulkUpload": "Caricamento in Massa",
     "logout": "Esci",
     "language": "Lingua",
-    "user": "Utente"
+    "user": "Utente",
+    "themeMode": "Attiva/Disattiva Modalità Scura/Chiara",
+    "themeVariant": "Variante del Tema"
   },
   "repositorySelector": {
     "title": "Seleziona un Repository",

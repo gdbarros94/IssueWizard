@@ -1,24 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import { ThemeProvider as MuiThemeProvider, CssBaseline } from '@mui/material';
 import { AppProvider, useApp } from './contexts/AppContext';
+import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import IssueList from './components/IssueList';
 import IssueDetail from './components/IssueDetail';
 import IssueEditor from './components/IssueEditor';
 import BulkUpload from './components/BulkUpload';
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#dc004e',
-    },
-  },
-});
+import ThemeDemo from './components/ThemeDemo';
 
 const ProtectedRoute = ({ children }) => {
   const { token } = useApp();
@@ -27,36 +18,40 @@ const ProtectedRoute = ({ children }) => {
 
 const AppRoutes = () => {
   const { token } = useApp();
+  const { theme } = useTheme();
 
   return (
-    <Routes>
-      <Route 
-        path="/login" 
-        element={token ? <Navigate to="/" /> : <Login />} 
-      />
-      <Route
-        path="/"
-        element={
-          <ProtectedRoute>
-            <Dashboard />
-          </ProtectedRoute>
-        }
-      >
-        <Route index element={<IssueList />} />
-        <Route path="issue/new" element={<IssueEditor />} />
-        <Route path="issue/:issueNumber" element={<IssueDetail />} />
-        <Route path="issue/:issueNumber/edit" element={<IssueEditor />} />
-        <Route path="bulk-upload" element={<BulkUpload />} />
-      </Route>
-      <Route path="*" element={<Navigate to="/" />} />
-    </Routes>
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+      <Routes>
+        <Route path="/theme-demo" element={<ThemeDemo />} />
+        <Route 
+          path="/login" 
+          element={token ? <Navigate to="/" /> : <Login />} 
+        />
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<IssueList />} />
+          <Route path="issue/new" element={<IssueEditor />} />
+          <Route path="issue/:issueNumber" element={<IssueDetail />} />
+          <Route path="issue/:issueNumber/edit" element={<IssueEditor />} />
+          <Route path="bulk-upload" element={<BulkUpload />} />
+        </Route>
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </MuiThemeProvider>
   );
 };
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <ThemeProvider>
       <AppProvider>
         <BrowserRouter>
           <AppRoutes />
