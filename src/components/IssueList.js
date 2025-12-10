@@ -21,10 +21,12 @@ import {
   RadioButtonUnchecked,
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useApp } from '../contexts/AppContext';
 import githubApi from '../services/githubApi';
 
 const IssueList = () => {
+  const { t } = useTranslation();
   const { selectedRepo, setError } = useApp();
   const [issues, setIssues] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -49,7 +51,7 @@ const IssueList = () => {
       const filteredIssues = issuesData.filter(issue => !issue.pull_request);
       setIssues(filteredIssues);
     } catch (err) {
-      setError('Failed to load issues: ' + err.message);
+      setError(t('issueList.errorLoad', { error: err.message }));
     } finally {
       setLoading(false);
     }
@@ -57,7 +59,7 @@ const IssueList = () => {
 
   const handleDelete = async (issue, e) => {
     e.stopPropagation();
-    if (!window.confirm(`Are you sure you want to close issue #${issue.number}?`)) {
+    if (!window.confirm(t('issueList.confirmClose', { number: issue.number }))) {
       return;
     }
 
@@ -66,7 +68,7 @@ const IssueList = () => {
       await githubApi.deleteIssue(owner, repo, issue.number);
       loadIssues();
     } catch (err) {
-      setError('Failed to close issue: ' + err.message);
+      setError(t('issueList.errorClose', { error: err.message }));
     }
   };
 
@@ -82,7 +84,7 @@ const IssueList = () => {
   if (!selectedRepo) {
     return (
       <Alert severity="info" sx={{ m: 2 }}>
-        Please select a repository to view issues.
+        {t('issueList.selectRepo')}
       </Alert>
     );
   }
@@ -99,10 +101,10 @@ const IssueList = () => {
     <Paper sx={{ p: 2 }}>
       <Typography variant="h6" gutterBottom sx={{ display: 'flex', alignItems: 'center' }}>
         <BugReport sx={{ mr: 1 }} />
-        Issues ({issues.length})
+        {t('issueList.title')} ({issues.length})
       </Typography>
       {issues.length === 0 ? (
-        <Alert severity="info">No issues found in this repository.</Alert>
+        <Alert severity="info">{t('issueList.noIssues')}</Alert>
       ) : (
         <List sx={{ maxHeight: 600, overflow: 'auto' }}>
           {issues.map((issue) => (
@@ -110,12 +112,12 @@ const IssueList = () => {
               key={issue.id}
               secondaryAction={
                 <Box>
-                  <Tooltip title="Edit">
+                  <Tooltip title={t('issueList.edit')}>
                     <IconButton edge="end" onClick={(e) => handleEdit(issue, e)}>
                       <Edit />
                     </IconButton>
                   </Tooltip>
-                  <Tooltip title="Close Issue">
+                  <Tooltip title={t('issueList.closeIssue')}>
                     <IconButton edge="end" onClick={(e) => handleDelete(issue, e)}>
                       <Delete />
                     </IconButton>
@@ -151,7 +153,7 @@ const IssueList = () => {
                       ))}
                     </Box>
                   }
-                  secondary={`Opened by ${issue.user.login} • ${issue.state}`}
+                  secondary={t('issueList.openedBy', { user: issue.user.login, state: issue.state })}
                 />
               </ListItemButton>
             </ListItem>

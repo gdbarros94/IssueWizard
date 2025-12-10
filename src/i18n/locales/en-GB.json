@@ -1,0 +1,92 @@
+{
+  "app": {
+    "title": "IssueWizard"
+  },
+  "login": {
+    "title": "IssueWizard",
+    "subtitle": "Manage GitHub issues with ease",
+    "tokenLabel": "GitHub Personal Access Token",
+    "tokenHelper": "Enter your GitHub personal access token with repo scope",
+    "connectButton": "Connect to GitHub",
+    "noToken": "Don't have a token?",
+    "createToken": "Create one here"
+  },
+  "dashboard": {
+    "newIssue": "New Issue",
+    "bulkUpload": "Bulk Upload",
+    "logout": "Logout",
+    "language": "Language",
+    "user": "User"
+  },
+  "repositorySelector": {
+    "title": "Select a Repository",
+    "noRepos": "No repositories found. Create a repository on GitHub first.",
+    "noDescription": "No description",
+    "private": "Private"
+  },
+  "issueList": {
+    "title": "Issues",
+    "selectRepo": "Please select a repository to view issues.",
+    "noIssues": "No issues found in this repository.",
+    "edit": "Edit",
+    "closeIssue": "Close Issue",
+    "confirmClose": "Are you sure you want to close issue #{{number}}?",
+    "openedBy": "Opened by {{user}} • {{state}}",
+    "errorLoad": "Failed to load issues: {{error}}",
+    "errorClose": "Failed to close issue: {{error}}"
+  },
+  "issueDetail": {
+    "backToIssues": "Back to Issues",
+    "editIssue": "Edit Issue",
+    "opened": "opened by {{user}}",
+    "description": "Description",
+    "noDescription": "No description provided.",
+    "assignees": "Assignees",
+    "created": "Created: {{date}}",
+    "updated": "Updated: {{date}}",
+    "selectRepo": "Please select a repository first.",
+    "notFound": "Issue not found.",
+    "errorLoad": "Failed to load issue: {{error}}",
+    "open": "open",
+    "closed": "closed"
+  },
+  "issueEditor": {
+    "back": "Back",
+    "editTitle": "Edit Issue #{{number}}",
+    "createTitle": "Create New Issue",
+    "titleLabel": "Title",
+    "descriptionLabel": "Description",
+    "labelsLabel": "Labels",
+    "stateLabel": "State",
+    "stateOpen": "Open",
+    "stateClosed": "Closed",
+    "saveButton": "Save Issue",
+    "saving": "Saving...",
+    "cancel": "Cancel",
+    "selectRepo": "Please select a repository first.",
+    "titleRequired": "Title is required",
+    "errorLoad": "Failed to load issue: {{error}}",
+    "errorSave": "Failed to save issue: {{error}}"
+  },
+  "bulkUpload": {
+    "title": "Bulk Upload Issues",
+    "instructions": "Upload a JSON file containing an array of issues. Each issue should have:",
+    "requiredFields": "title (required), body, labels (array), assignees (array)",
+    "example": "Example:",
+    "selectRepo": "Please select a repository first",
+    "selectFile": "Select JSON File",
+    "uploading": "Uploading issues... {{progress}}%",
+    "results": "Upload Results",
+    "successful": "{{count}} Successful",
+    "failed": "{{count}} Failed",
+    "createdAs": "Created as issue #{{number}}",
+    "error": "Error: {{error}}",
+    "errorProcess": "Failed to process file: {{error}}",
+    "errorArray": "JSON file must contain an array of issues",
+    "errorNoRepo": "Please select a repository first"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error"
+  }
+}

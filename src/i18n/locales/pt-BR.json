@@ -1,0 +1,92 @@
+{
+  "app": {
+    "title": "IssueWizard"
+  },
+  "login": {
+    "title": "IssueWizard",
+    "subtitle": "Gerencie issues do GitHub com facilidade",
+    "tokenLabel": "Token de Acesso Pessoal do GitHub",
+    "tokenHelper": "Digite seu token de acesso pessoal do GitHub com escopo repo",
+    "connectButton": "Conectar ao GitHub",
+    "noToken": "Não tem um token?",
+    "createToken": "Crie um aqui"
+  },
+  "dashboard": {
+    "newIssue": "Nova Issue",
+    "bulkUpload": "Upload em Massa",
+    "logout": "Sair",
+    "language": "Idioma",
+    "user": "Usuário"
+  },
+  "repositorySelector": {
+    "title": "Selecione um Repositório",
+    "noRepos": "Nenhum repositório encontrado. Crie um repositório no GitHub primeiro.",
+    "noDescription": "Sem descrição",
+    "private": "Privado"
+  },
+  "issueList": {
+    "title": "Issues",
+    "selectRepo": "Por favor, selecione um repositório para ver as issues.",
+    "noIssues": "Nenhuma issue encontrada neste repositório.",
+    "edit": "Editar",
+    "closeIssue": "Fechar Issue",
+    "confirmClose": "Tem certeza de que deseja fechar a issue #{{number}}?",
+    "openedBy": "Aberta por {{user}} • {{state}}",
+    "errorLoad": "Falha ao carregar issues: {{error}}",
+    "errorClose": "Falha ao fechar issue: {{error}}"
+  },
+  "issueDetail": {
+    "backToIssues": "Voltar para Issues",
+    "editIssue": "Editar Issue",
+    "opened": "aberta por {{user}}",
+    "description": "Descrição",
+    "noDescription": "Nenhuma descrição fornecida.",
+    "assignees": "Responsáveis",
+    "created": "Criada: {{date}}",
+    "updated": "Atualizada: {{date}}",
+    "selectRepo": "Por favor, selecione um repositório primeiro.",
+    "notFound": "Issue não encontrada.",
+    "errorLoad": "Falha ao carregar issue: {{error}}",
+    "open": "aberta",
+    "closed": "fechada"
+  },
+  "issueEditor": {
+    "back": "Voltar",
+    "editTitle": "Editar Issue #{{number}}",
+    "createTitle": "Criar Nova Issue",
+    "titleLabel": "Título",
+    "descriptionLabel": "Descrição",
+    "labelsLabel": "Etiquetas",
+    "stateLabel": "Estado",
+    "stateOpen": "Aberta",
+    "stateClosed": "Fechada",
+    "saveButton": "Salvar Issue",
+    "saving": "Salvando...",
+    "cancel": "Cancelar",
+    "selectRepo": "Por favor, selecione um repositório primeiro.",
+    "titleRequired": "Título é obrigatório",
+    "errorLoad": "Falha ao carregar issue: {{error}}",
+    "errorSave": "Falha ao salvar issue: {{error}}"
+  },
+  "bulkUpload": {
+    "title": "Upload em Massa de Issues",
+    "instructions": "Carregue um arquivo JSON contendo um array de issues. Cada issue deve ter:",
+    "requiredFields": "title (obrigatório), body, labels (array), assignees (array)",
+    "example": "Exemplo:",
+    "selectRepo": "Por favor, selecione um repositório primeiro",
+    "selectFile": "Selecionar Arquivo JSON",
+    "uploading": "Enviando issues... {{progress}}%",
+    "results": "Resultados do Upload",
+    "successful": "{{count}} Bem-sucedidas",
+    "failed": "{{count}} Falhadas",
+    "createdAs": "Criada como issue #{{number}}",
+    "error": "Erro: {{error}}",
+    "errorProcess": "Falha ao processar arquivo: {{error}}",
+    "errorArray": "O arquivo JSON deve conter um array de issues",
+    "errorNoRepo": "Por favor, selecione um repositório primeiro"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Erro"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "app": {
+    "title": "IssueWizard"
+  },
+  "login": {
+    "title": "IssueWizard",
+    "subtitle": "Gestisci le issue di GitHub con facilità",
+    "tokenLabel": "Token di Accesso Personale GitHub",
+    "tokenHelper": "Inserisci il tuo token di accesso personale GitHub con ambito repo",
+    "connectButton": "Connetti a GitHub",
+    "noToken": "Non hai un token?",
+    "createToken": "Creane uno qui"
+  },
+  "dashboard": {
+    "newIssue": "Nuova Issue",
+    "bulkUpload": "Caricamento in Massa",
+    "logout": "Esci",
+    "language": "Lingua",
+    "user": "Utente"
+  },
+  "repositorySelector": {
+    "title": "Seleziona un Repository",
+    "noRepos": "Nessun repository trovato. Crea prima un repository su GitHub.",
+    "noDescription": "Nessuna descrizione",
+    "private": "Privato"
+  },
+  "issueList": {
+    "title": "Issue",
+    "selectRepo": "Seleziona un repository per visualizzare le issue.",
+    "noIssues": "Nessuna issue trovata in questo repository.",
+    "edit": "Modifica",
+    "closeIssue": "Chiudi Issue",
+    "confirmClose": "Sei sicuro di voler chiudere l'issue #{{number}}?",
+    "openedBy": "Aperta da {{user}} • {{state}}",
+    "errorLoad": "Impossibile caricare le issue: {{error}}",
+    "errorClose": "Impossibile chiudere l'issue: {{error}}"
+  },
+  "issueDetail": {
+    "backToIssues": "Torna alle Issue",
+    "editIssue": "Modifica Issue",
+    "opened": "aperta da {{user}}",
+    "description": "Descrizione",
+    "noDescription": "Nessuna descrizione fornita.",
+    "assignees": "Assegnatari",
+    "created": "Creata: {{date}}",
+    "updated": "Aggiornata: {{date}}",
+    "selectRepo": "Seleziona prima un repository.",
+    "notFound": "Issue non trovata.",
+    "errorLoad": "Impossibile caricare l'issue: {{error}}",
+    "open": "aperta",
+    "closed": "chiusa"
+  },
+  "issueEditor": {
+    "back": "Indietro",
+    "editTitle": "Modifica Issue #{{number}}",
+    "createTitle": "Crea Nuova Issue",
+    "titleLabel": "Titolo",
+    "descriptionLabel": "Descrizione",
+    "labelsLabel": "Etichette",
+    "stateLabel": "Stato",
+    "stateOpen": "Aperta",
+    "stateClosed": "Chiusa",
+    "saveButton": "Salva Issue",
+    "saving": "Salvataggio...",
+    "cancel": "Annulla",
+    "selectRepo": "Seleziona prima un repository.",
+    "titleRequired": "Il titolo è obbligatorio",
+    "errorLoad": "Impossibile caricare l'issue: {{error}}",
+    "errorSave": "Impossibile salvare l'issue: {{error}}"
+  },
+  "bulkUpload": {
+    "title": "Caricamento in Massa di Issue",
+    "instructions": "Carica un file JSON contenente un array di issue. Ogni issue deve avere:",
+    "requiredFields": "title (obbligatorio), body, labels (array), assignees (array)",
+    "example": "Esempio:",
+    "selectRepo": "Seleziona prima un repository",
+    "selectFile": "Seleziona File JSON",
+    "uploading": "Caricamento issue... {{progress}}%",
+    "results": "Risultati del Caricamento",
+    "successful": "{{count}} Riuscite",
+    "failed": "{{count}} Fallite",
+    "createdAs": "Creata come issue #{{number}}",
+    "error": "Errore: {{error}}",
+    "errorProcess": "Impossibile elaborare il file: {{error}}",
+    "errorArray": "Il file JSON deve contenere un array di issue",
+    "errorNoRepo": "Seleziona prima un repository"
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "error": "Errore"
+  }
+}

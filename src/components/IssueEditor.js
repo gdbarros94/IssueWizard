@@ -16,10 +16,12 @@ import {
 } from '@mui/material';
 import { ArrowBack, Save } from '@mui/icons-material';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useApp } from '../contexts/AppContext';
 import githubApi from '../services/githubApi';
 
 const IssueEditor = () => {
+  const { t } = useTranslation();
   const { issueNumber } = useParams();
   const { selectedRepo, setError } = useApp();
   const [loading, setLoading] = useState(false);
@@ -65,7 +67,7 @@ const IssueEditor = () => {
         state: issue.state,
       });
     } catch (err) {
-      setError('Failed to load issue: ' + err.message);
+      setError(t('issueEditor.errorLoad', { error: err.message }));
     } finally {
       setLoading(false);
     }
@@ -78,7 +80,7 @@ const IssueEditor = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.title.trim()) {
-      setError('Title is required');
+      setError(t('issueEditor.titleRequired'));
       return;
     }
 
@@ -100,7 +102,7 @@ const IssueEditor = () => {
       }
       navigate('/');
     } catch (err) {
-      setError('Failed to save issue: ' + err.message);
+      setError(t('issueEditor.errorSave', { error: err.message }));
     } finally {
       setSaving(false);
     }
@@ -109,7 +111,7 @@ const IssueEditor = () => {
   if (!selectedRepo) {
     return (
       <Alert severity="info" sx={{ m: 2 }}>
-        Please select a repository first.
+        {t('issueEditor.selectRepo')}
       </Alert>
     );
   }
@@ -126,18 +128,18 @@ const IssueEditor = () => {
     <Paper sx={{ p: 3 }}>
       <Box sx={{ mb: 2 }}>
         <Button startIcon={<ArrowBack />} onClick={() => navigate(-1)}>
-          Back
+          {t('issueEditor.back')}
         </Button>
       </Box>
 
       <Typography variant="h5" gutterBottom>
-        {issueNumber ? `Edit Issue #${issueNumber}` : 'Create New Issue'}
+        {issueNumber ? t('issueEditor.editTitle', { number: issueNumber }) : t('issueEditor.createTitle')}
       </Typography>
 
       <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
         <TextField
           fullWidth
-          label="Title"
+          label={t('issueEditor.titleLabel')}
           value={formData.title}
           onChange={(e) => handleChange('title', e.target.value)}
           required
@@ -146,7 +148,7 @@ const IssueEditor = () => {
 
         <TextField
           fullWidth
-          label="Description"
+          label={t('issueEditor.descriptionLabel')}
           value={formData.body}
           onChange={(e) => handleChange('body', e.target.value)}
           multiline
@@ -155,12 +157,12 @@ const IssueEditor = () => {
         />
 
         <FormControl fullWidth margin="normal">
-          <InputLabel>Labels</InputLabel>
+          <InputLabel>{t('issueEditor.labelsLabel')}</InputLabel>
           <Select
             multiple
             value={formData.labels}
             onChange={(e) => handleChange('labels', e.target.value)}
-            input={<OutlinedInput label="Labels" />}
+            input={<OutlinedInput label={t('issueEditor.labelsLabel')} />}
             renderValue={(selected) => (
               <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                 {selected.map((value) => {
@@ -198,14 +200,14 @@ const IssueEditor = () => {
 
         {issueNumber && (
           <FormControl fullWidth margin="normal">
-            <InputLabel>State</InputLabel>
+            <InputLabel>{t('issueEditor.stateLabel')}</InputLabel>
             <Select
               value={formData.state}
               onChange={(e) => handleChange('state', e.target.value)}
-              label="State"
+              label={t('issueEditor.stateLabel')}
             >
-              <MenuItem value="open">Open</MenuItem>
-              <MenuItem value="closed">Closed</MenuItem>
+              <MenuItem value="open">{t('issueEditor.stateOpen')}</MenuItem>
+              <MenuItem value="closed">{t('issueEditor.stateClosed')}</MenuItem>
             </Select>
           </FormControl>
         )}
@@ -217,10 +219,10 @@ const IssueEditor = () => {
             startIcon={<Save />}
             disabled={saving}
           >
-            {saving ? 'Saving...' : 'Save Issue'}
+            {saving ? t('issueEditor.saving') : t('issueEditor.saveButton')}
           </Button>
           <Button variant="outlined" onClick={() => navigate(-1)}>
-            Cancel
+            {t('issueEditor.cancel')}
           </Button>
         </Box>
       </Box>

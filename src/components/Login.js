@@ -10,9 +10,11 @@ import {
   Link,
 } from '@mui/material';
 import { GitHub } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import { useApp } from '../contexts/AppContext';
 
 const Login = () => {
+  const { t } = useTranslation();
   const [tokenInput, setTokenInput] = useState('');
   const { handleLogin, error } = useApp();
 
@@ -29,10 +31,10 @@ const Login = () => {
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <GitHub sx={{ fontSize: 60, color: 'primary.main', mb: 2 }} />
           <Typography variant="h4" component="h1" gutterBottom>
-            IssueWizard
+            {t('login.title')}
           </Typography>
           <Typography variant="body1" color="text.secondary" align="center" sx={{ mb: 3 }}>
-            Manage GitHub issues with ease
+            {t('login.subtitle')}
           </Typography>
 
           {error && (
@@ -44,14 +46,14 @@ const Login = () => {
           <Box component="form" onSubmit={handleSubmit} sx={{ width: '100%' }}>
             <TextField
               fullWidth
-              label="GitHub Personal Access Token"
+              label={t('login.tokenLabel')}
               variant="outlined"
               type="password"
               value={tokenInput}
               onChange={(e) => setTokenInput(e.target.value)}
               margin="normal"
               required
-              helperText="Enter your GitHub personal access token with repo scope"
+              helperText={t('login.tokenHelper')}
             />
             <Button
               type="submit"
@@ -60,19 +62,19 @@ const Login = () => {
               size="large"
               sx={{ mt: 2 }}
             >
-              Connect to GitHub
+              {t('login.connectButton')}
             </Button>
           </Box>
 
           <Box sx={{ mt: 3, textAlign: 'center' }}>
             <Typography variant="body2" color="text.secondary">
-              Don't have a token?{' '}
+              {t('login.noToken')}{' '}
               <Link
                 href="https://github.com/settings/tokens/new?scopes=repo"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Create one here
+                {t('login.createToken')}
               </Link>
             </Typography>
           </Box>
