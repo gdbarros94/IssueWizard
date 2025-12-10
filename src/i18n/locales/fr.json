@@ -14,7 +14,9 @@
   "dashboard": {
     "newIssue": "Nouvelle Issue",
     "bulkUpload": "Téléchargement en Masse",
-    "logout": "Se Déconnecter"
+    "logout": "Se Déconnecter",
+    "language": "Langue",
+    "user": "Utilisateur"
   },
   "repositorySelector": {
     "title": "Sélectionnez un Dépôt",

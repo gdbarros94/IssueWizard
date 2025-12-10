@@ -14,7 +14,9 @@
   "dashboard": {
     "newIssue": "Nova Issue",
     "bulkUpload": "Upload em Massa",
-    "logout": "Sair"
+    "logout": "Sair",
+    "language": "Idioma",
+    "user": "Usuário"
   },
   "repositorySelector": {
     "title": "Selecione um Repositório",

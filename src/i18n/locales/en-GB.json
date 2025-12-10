@@ -14,7 +14,9 @@
   "dashboard": {
     "newIssue": "New Issue",
     "bulkUpload": "Bulk Upload",
-    "logout": "Logout"
+    "logout": "Logout",
+    "language": "Language",
+    "user": "User"
   },
   "repositorySelector": {
     "title": "Select a Repository",

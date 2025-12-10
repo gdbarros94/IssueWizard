@@ -14,7 +14,9 @@
   "dashboard": {
     "newIssue": "Nueva Issue",
     "bulkUpload": "Carga Masiva",
-    "logout": "Cerrar Sesión"
+    "logout": "Cerrar Sesión",
+    "language": "Idioma",
+    "user": "Usuario"
   },
   "repositorySelector": {
     "title": "Selecciona un Repositorio",

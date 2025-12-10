@@ -89,7 +89,7 @@ const Dashboard = () => {
             {t('dashboard.bulkUpload')}
           </Button>
 
-          <Tooltip title="Language">
+          <Tooltip title={t('dashboard.language')}>
             <IconButton
               size="large"
               onClick={handleLangMenu}
@@ -114,7 +114,7 @@ const Dashboard = () => {
             ))}
           </Menu>
 
-          <Tooltip title={user?.login || 'User'}>
+          <Tooltip title={user?.login || t('dashboard.user')}>
             <IconButton
               size="large"
               onClick={handleMenu}

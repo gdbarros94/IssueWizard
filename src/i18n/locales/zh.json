@@ -14,7 +14,9 @@
   "dashboard": {
     "newIssue": "新建问题",
     "bulkUpload": "批量上传",
-    "logout": "退出"
+    "logout": "退出",
+    "language": "语言",
+    "user": "用户"
   },
   "repositorySelector": {
     "title": "选择仓库",

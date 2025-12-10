@@ -14,7 +14,9 @@
   "dashboard": {
     "newIssue": "新しいイシュー",
     "bulkUpload": "一括アップロード",
-    "logout": "ログアウト"
+    "logout": "ログアウト",
+    "language": "言語",
+    "user": "ユーザー"
   },
   "repositorySelector": {
     "title": "リポジトリを選択",

@@ -14,7 +14,9 @@
   "dashboard": {
     "newIssue": "Новая Issue",
     "bulkUpload": "Массовая Загрузка",
-    "logout": "Выйти"
+    "logout": "Выйти",
+    "language": "Язык",
+    "user": "Пользователь"
   },
   "repositorySelector": {
     "title": "Выберите Репозиторий",

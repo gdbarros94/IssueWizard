@@ -14,7 +14,9 @@
   "dashboard": {
     "newIssue": "Nuova Issue",
     "bulkUpload": "Caricamento in Massa",
-    "logout": "Esci"
+    "logout": "Esci",
+    "language": "Lingua",
+    "user": "Utente"
   },
   "repositorySelector": {
     "title": "Seleziona un Repository",

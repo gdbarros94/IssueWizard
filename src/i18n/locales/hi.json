@@ -14,7 +14,9 @@
   "dashboard": {
     "newIssue": "नया इश्यू",
     "bulkUpload": "थोक अपलोड",
-    "logout": "लॉगआउट"
+    "logout": "लॉगआउट",
+    "language": "भाषा",
+    "user": "उपयोगकर्ता"
   },
   "repositorySelector": {
     "title": "एक रिपॉज़िटरी चुनें",
