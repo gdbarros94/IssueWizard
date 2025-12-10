@@ -14,10 +14,25 @@ A modern web application for managing GitHub issues with ease. Built with React 
 
 ## Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js (v14 or higher) OR Docker
 - GitHub Personal Access Token with `repo` scope
 
 ## Installation
+
+### Option 1: Docker (Recommended for Production)
+
+The easiest way to run IssueWizard:
+
+```bash
+# Using Docker Compose
+docker-compose up -d
+
+# The app will be available at http://localhost:8090
+```
+
+For detailed Docker instructions, see [README-DOCKER.md](README-DOCKER.md)
+
+### Option 2: Node.js (Development)
 
 1. Clone the repository:
 ```bash
