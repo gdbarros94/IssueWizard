@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Add user authentication",
+    "body": "Implement user authentication using OAuth 2.0",
+    "labels": ["enhancement", "security"]
+  },
+  {
+    "title": "Fix navigation bug",
+    "body": "Navigation menu doesn't work on mobile devices",
+    "labels": ["bug", "mobile"]
+  },
+  {
+    "title": "Update documentation",
+    "body": "Add API documentation for all endpoints",
+    "labels": ["documentation"]
+  },
+  {
+    "title": "Performance optimization",
+    "body": "Optimize database queries to improve response time",
+    "labels": ["enhancement", "performance"]
+  },
+  {
+    "title": "Add dark mode",
+    "body": "Implement dark mode theme for better user experience",
+    "labels": ["enhancement", "ui"]
+  }
+]

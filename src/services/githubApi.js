@@ -21,7 +21,7 @@ class GitHubAPI {
 
   async fetchWithAuth(url, options = {}) {
     const headers = {
-      'Authorization': `token ${this.token}`,
+      'Authorization': `Bearer ${this.token}`,
       'Accept': 'application/vnd.github.v3+json',
       'Content-Type': 'application/json',
       ...options.headers,

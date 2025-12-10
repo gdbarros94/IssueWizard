@@ -68,7 +68,7 @@ const BulkUpload = () => {
       setError('Failed to process file: ' + err.message);
     } finally {
       setUploading(false);
-      event.target.value = null; // Reset file input
+      event.target.value = ''; // Reset file input
     }
   };
 
