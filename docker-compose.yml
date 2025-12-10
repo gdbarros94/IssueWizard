@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  issuewizard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: issuewizard:latest
+    container_name: issuewizard-app
+    ports:
+      - "${PORT:-8090}:8090"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8090"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
