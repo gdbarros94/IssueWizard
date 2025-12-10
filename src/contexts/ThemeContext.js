@@ -148,15 +148,17 @@ const themeVariants = {
 };
 
 export const ThemeProvider = ({ children }) => {
-  // Load theme preferences from localStorage
+  // Load theme preferences from localStorage with validation
   const [mode, setMode] = useState(() => {
     const savedMode = localStorage.getItem('themeMode');
-    return savedMode || 'light';
+    return savedMode && themeVariants[savedMode] ? savedMode : 'light';
   });
 
   const [variant, setVariant] = useState(() => {
     const savedVariant = localStorage.getItem('themeVariant');
-    return savedVariant || 'default';
+    const currentMode = localStorage.getItem('themeMode') || 'light';
+    const validMode = themeVariants[currentMode] ? currentMode : 'light';
+    return savedVariant && themeVariants[validMode][savedVariant] ? savedVariant : 'default';
   });
 
   // Save theme preferences to localStorage
@@ -169,7 +171,10 @@ export const ThemeProvider = ({ children }) => {
   }, [variant]);
 
   const theme = useMemo(() => {
-    const themeConfig = themeVariants[mode][variant];
+    // Validate mode and variant before accessing
+    const validMode = themeVariants[mode] ? mode : 'light';
+    const validVariant = themeVariants[validMode][variant] ? variant : 'default';
+    const themeConfig = themeVariants[validMode][validVariant];
     return createTheme(themeConfig.palette);
   }, [mode, variant]);
 
