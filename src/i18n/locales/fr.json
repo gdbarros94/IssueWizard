@@ -83,6 +83,7 @@
     "failed": "{{count}} Échouées",
     "createdAs": "Créée en tant qu'issue #{{number}}",
     "error": "Erreur : {{error}}",
+    "errorParse": "Erreur lors du traitement du JSON - vérifiez la syntaxe du fichier",
     "errorProcess": "Échec du traitement du fichier : {{error}}",
     "errorArray": "Le fichier JSON doit contenir un tableau d'issues",
     "errorNoRepo": "Veuillez d'abord sélectionner un dépôt"

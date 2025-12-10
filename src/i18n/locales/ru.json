@@ -83,6 +83,7 @@
     "failed": "{{count}} Неудачных",
     "createdAs": "Создана как issue #{{number}}",
     "error": "Ошибка: {{error}}",
+    "errorParse": "Ошибка обработки JSON - проверьте синтаксис файла",
     "errorProcess": "Не удалось обработать файл: {{error}}",
     "errorArray": "JSON-файл должен содержать массив issues",
     "errorNoRepo": "Пожалуйста, сначала выберите репозиторий"

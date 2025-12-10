@@ -83,9 +83,11 @@
     "failed": "{{count}} Failed",
     "createdAs": "Created as issue #{{number}}",
     "error": "Error: {{error}}",
+    "errorParse": "Error parsing JSON - please check the file syntax",
     "errorProcess": "Failed to process file: {{error}}",
     "errorArray": "JSON file must contain an array of issues",
-    "errorNoRepo": "Please select a repository first"
+    "errorNoRepo": "Please select a repository first",
+    "noFeedback": "Upload attempted but no issues were created and no error was reported. Check token/permissions and network."
   },
   "common": {
     "loading": "Loading...",

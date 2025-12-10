@@ -3,6 +3,7 @@ import {
   Container,
   Grid,
   Box,
+  Alert,
   AppBar,
   Toolbar,
   Typography,
@@ -24,6 +25,7 @@ import {
   Brightness4,
   Brightness7,
   Palette,
+  Close,
   Check,
 } from '@mui/icons-material';
 import { useNavigate, Outlet } from 'react-router-dom';
@@ -34,7 +36,7 @@ import RepositorySelector from './RepositorySelector';
 
 const Dashboard = () => {
   const { t, i18n } = useTranslation();
-  const { user, handleLogout } = useApp();
+  const { user, handleLogout, error, setError } = useApp();
   const { mode, variant, toggleMode, setThemeVariant, getAvailableThemes } = useTheme();
   const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -205,12 +207,33 @@ const Dashboard = () => {
         </Toolbar>
       </AppBar>
 
+      {error && (
+        <Container maxWidth="xl" sx={{ mt: 2 }}>
+          <Alert
+            severity="error"
+            action={
+              <IconButton
+                aria-label="close"
+                color="inherit"
+                size="small"
+                onClick={() => setError(null)}
+              >
+                <Close fontSize="inherit" />
+              </IconButton>
+            }
+            sx={{ mb: 2 }}
+          >
+            {error}
+          </Alert>
+        </Container>
+      )}
+
       <Container maxWidth="xl" sx={{ mt: 4, mb: 4, flex: 1 }}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={3}>
+          <Grid size={{ xs: 12, md: 3 }}>
             <RepositorySelector />
           </Grid>
-          <Grid item xs={12} md={9}>
+          <Grid size={{ xs: 12, md: 9 }}>
             <Outlet />
           </Grid>
         </Grid>

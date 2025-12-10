@@ -22,6 +22,7 @@ const BulkUpload = () => {
   const [uploading, setUploading] = useState(false);
   const [results, setResults] = useState(null);
   const [progress, setProgress] = useState(0);
+  const [attempted, setAttempted] = useState(false);
 
   const handleFileUpload = async (event) => {
     const file = event.target.files[0];
@@ -34,13 +35,40 @@ const BulkUpload = () => {
 
     try {
       const text = await file.text();
-      const issues = JSON.parse(text);
+      
+      let issues;
+      try {
+        issues = JSON.parse(text);
+      } catch (parseError) {
+        // Attempt to auto-repair common case: unescaped newlines inside "description" strings
+        try {
+          const repairRegex = /("description"\s*:\s*")([\s\S]*?)("\s*,\s*\n\s*"labels")/g;
+          const repaired = text.replace(repairRegex, (m, p1, p2, p3) => {
+            const inner = p2.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\r?\n/g, '\\n');
+            return p1 + inner + p3;
+          });
+
+          issues = JSON.parse(repaired);
+        } catch (repairError) {
+          setError(`${t('bulkUpload.errorParse')}: ${parseError.message}`);
+          return;
+        }
+      }
 
       if (!Array.isArray(issues)) {
         setError(t('bulkUpload.errorArray'));
         return;
       }
 
+      // normalize: support 'description' field by mapping it to 'body' for GitHub API
+      issues = issues.map((it) => {
+        if (it.description && !it.body) {
+          return { ...it, body: it.description };
+        }
+        return it;
+      });
+
+      setAttempted(true);
       setUploading(true);
       setError(null);
       setResults(null);
@@ -180,6 +208,11 @@ const BulkUpload = () => {
               </ListItem>
             ))}
           </List>
+        </Box>
+      )}
+      {!uploading && attempted && (!results || results.length === 0) && (
+        <Box sx={{ mt: 2 }}>
+          <Alert severity="warning">{t('bulkUpload.noFeedback')}</Alert>
         </Box>
       )}
     </Paper>

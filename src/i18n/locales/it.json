@@ -83,6 +83,7 @@
     "failed": "{{count}} Fallite",
     "createdAs": "Creata come issue #{{number}}",
     "error": "Errore: {{error}}",
+    "errorParse": "Errore nell'elaborazione del JSON - verificare la sintassi del file",
     "errorProcess": "Impossibile elaborare il file: {{error}}",
     "errorArray": "Il file JSON deve contenere un array di issue",
     "errorNoRepo": "Seleziona prima un repository"

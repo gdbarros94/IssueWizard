@@ -83,9 +83,11 @@
     "failed": "{{count}} Falhadas",
     "createdAs": "Criada como issue #{{number}}",
     "error": "Erro: {{error}}",
+    "errorParse": "Erro ao processar JSON - verifique a sintaxe do arquivo",
     "errorProcess": "Falha ao processar arquivo: {{error}}",
     "errorArray": "O arquivo JSON deve conter um array de issues",
-    "errorNoRepo": "Por favor, selecione um repositório primeiro"
+    "errorNoRepo": "Por favor, selecione um repositório primeiro",
+    "noFeedback": "Upload realizado, mas nenhuma issue foi criada e nenhum erro foi retornado. Verifique token/permissões e rede."
   },
   "common": {
     "loading": "Carregando...",

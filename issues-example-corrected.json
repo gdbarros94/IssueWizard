@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Aprimorar Dockerfile e docker-compose para build e execução estáveis",
+    "body": "Problema: o Dockerfile e o docker-compose atuais ainda não permitem build/execução confiáveis (variáveis de ambiente, volumes, build multi-stage, healthchecks, persistência, otimização de imagem, modos dev/prod).\n\nTarefas sugeridas:\n- Converter Dockerfile para multi-stage (build + runtime) para reduzir tamanho de imagem.\n- Expor e documentar variáveis de ambiente necessárias; adicionar .env.example.\n- Implementar docker-compose.override.yml para desenvolvimento (hot-reload, mapeamento de volumes) e docker-compose.yml para produção.\n- Adicionar healthcheck no serviço da aplicação e dependências (ex.: banco) e garantir restart policy adequada.\n- Configurar volumes para persistência (se aplicável) e bind mounts para dev.\n- Garantir que migrations/seed sejam executáveis via entrypoint/command opcional.\n- Criar scripts npm/Makefile para facilitar build/run em container.\n- Atualizar README com instruções: build, up, logs, exec, rebuild, limpar imagens.\n\nCritérios de aceite:\n- docker build --pull --no-cache finaliza sem erro e imagem é otimizada.\n- docker-compose up -d levanta todos serviços funcionais (app + db) e o healthcheck passa.\n- Modos dev/prod documentados e funcionais (hot reload no dev).\n- README atualizado com comandos e exemplos.",
+    "labels": ["devops", "docker", "bugfix"],
+    "assignees": []
+  },
+  {
+    "title": "Implementar troca de tema e múltiplos temas (claro/escuro) corretamente",
+    "body": "Objetivo: aplicar um sistema robusto de theming que suporte pelo menos Tema Claro e Tema Escuro, com possibilidade de adicionar outros temas depois.\n\nTarefas sugeridas:\n- Definir tokens de design (cores via CSS variables, espaçamentos, tipografia) centralizados.\n- Implementar ThemeProvider (React/Vue conforme o stack) que injete classes/variáveis no root.\n- Adicionar toggle persistente (localStorage) e detecção inicial pela preferência do sistema (prefers-color-scheme).\n- Garantir transição suave entre temas e compatibilidade com componentes existentes.\n- Criar variantes de tema (light, dark; opcional: high-contrast) e garantir contraste mínimo para acessibilidade.\n- Atualizar componentes comuns (botões, cards, inputs, navbar) para usar tokens do tema.\n- Adicionar testes visuais/checagens manuais e screenshots para QA.\n\nCritérios de aceite:\n- Usuário pode alternar tema via UI e a escolha persiste entre sessões.\n- Aplicação respeita preferência do sistema por padrão.\n- Todos os componentes principais mudam corretamente de aparência (sem quebrar legibilidade).\n- Documentação curta no README explicando como adicionar novos temas.",
+    "labels": ["frontend", "theme", "a11y"],
+    "assignees": []
+  },
+  {
+    "title": "Refatorar layout: criar mecânica de blocos distintos para cada função do app",
+    "body": "Objetivo: reorganizar a interface em blocos visuais claros (cards/sections) para separar funcionalidades — tornando o app menos confuso e mais navegável.\n\nTarefas sugeridas:\n- Definir um conjunto de componentes de bloco/card (HeaderBlock, ActionBlock, ListBlock, DetailBlock) com props padrão (título, subtítulo, ações, footer).\n- Criar um grid/layout system responsivo (colunas ajustáveis) para posicionar blocos em telas grandes/pequenas.\n- Aplicar espaçamento consistente, bordas/sombreamento e cores de fundo distintas para cada tipo de bloco para fácil leitura.\n- Implementar padrões de comportamento (ex.: blocos colapsáveis, estado vazio, skeleton loading).\n- Atualizar páginas críticas (lista de issues, criação/edição, detalhes) para usar os novos blocos.\n- Garantir coerência com o tema (usar tokens) e testes de responsividade.\n\nCritérios de aceite:\n- Fluxos principais apresentam blocos visuais distintos que deixam clara a função de cada área.\n- Layout responsivo funciona em mobile/tablet/desktop.\n- Componente de bloco reutilizável documentado e usado em pelo menos 3 telas.",
+    "labels": ["frontend", "UI/UX", "refactor"],
+    "assignees": []
+  }
+]

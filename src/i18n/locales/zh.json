@@ -81,8 +81,9 @@
     "results": "上传结果",
     "successful": "{{count}} 个成功",
     "failed": "{{count}} 个失败",
-    "createdAs": "已创建为问题 #{{number}}",
+    "createdAs": "已创建为 issue #{{number}}",
     "error": "错误：{{error}}",
+    "errorParse": "解析 JSON 时出错 - 请检查文件语法",
     "errorProcess": "处理文件失败：{{error}}",
     "errorArray": "JSON 文件必须包含问题数组",
     "errorNoRepo": "请先选择一个仓库"

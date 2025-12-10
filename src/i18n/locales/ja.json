@@ -82,8 +82,9 @@
     "successful": "{{count}}件成功",
     "failed": "{{count}}件失敗",
     "createdAs": "イシュー #{{number}} として作成されました",
-    "error": "エラー：{{error}}",
-    "errorProcess": "ファイルの処理に失敗しました：{{error}}",
+    "error": "エラー: {{error}}",
+    "errorParse": "JSON の処理中にエラーが発生しました - ファイルの構文を確認してください",
+    "errorProcess": "ファイルの処理に失敗しました: {{error}}",
     "errorArray": "JSONファイルにはイシューの配列が含まれている必要があります",
     "errorNoRepo": "まずリポジトリを選択してください"
   },
