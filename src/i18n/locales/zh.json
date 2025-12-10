@@ -1,0 +1,90 @@
+{
+  "app": {
+    "title": "IssueWizard"
+  },
+  "login": {
+    "title": "IssueWizard",
+    "subtitle": "轻松管理 GitHub 问题",
+    "tokenLabel": "GitHub 个人访问令牌",
+    "tokenHelper": "输入您的 GitHub 个人访问令牌（需要 repo 权限）",
+    "connectButton": "连接到 GitHub",
+    "noToken": "还没有令牌？",
+    "createToken": "在此创建"
+  },
+  "dashboard": {
+    "newIssue": "新建问题",
+    "bulkUpload": "批量上传",
+    "logout": "退出"
+  },
+  "repositorySelector": {
+    "title": "选择仓库",
+    "noRepos": "未找到仓库。请先在 GitHub 上创建仓库。",
+    "noDescription": "无描述",
+    "private": "私有"
+  },
+  "issueList": {
+    "title": "问题",
+    "selectRepo": "请选择一个仓库以查看问题。",
+    "noIssues": "此仓库中未找到问题。",
+    "edit": "编辑",
+    "closeIssue": "关闭问题",
+    "confirmClose": "您确定要关闭问题 #{{number}} 吗？",
+    "openedBy": "由 {{user}} 开启 • {{state}}",
+    "errorLoad": "加载问题失败：{{error}}",
+    "errorClose": "关闭问题失败：{{error}}"
+  },
+  "issueDetail": {
+    "backToIssues": "返回问题列表",
+    "editIssue": "编辑问题",
+    "opened": "由 {{user}} 开启",
+    "description": "描述",
+    "noDescription": "未提供描述。",
+    "assignees": "指派人",
+    "created": "创建时间：{{date}}",
+    "updated": "更新时间：{{date}}",
+    "selectRepo": "请先选择一个仓库。",
+    "notFound": "未找到问题。",
+    "errorLoad": "加载问题失败：{{error}}",
+    "open": "开启",
+    "closed": "已关闭"
+  },
+  "issueEditor": {
+    "back": "返回",
+    "editTitle": "编辑问题 #{{number}}",
+    "createTitle": "创建新问题",
+    "titleLabel": "标题",
+    "descriptionLabel": "描述",
+    "labelsLabel": "标签",
+    "stateLabel": "状态",
+    "stateOpen": "开启",
+    "stateClosed": "已关闭",
+    "saveButton": "保存问题",
+    "saving": "保存中...",
+    "cancel": "取消",
+    "selectRepo": "请先选择一个仓库。",
+    "titleRequired": "标题为必填项",
+    "errorLoad": "加载问题失败：{{error}}",
+    "errorSave": "保存问题失败：{{error}}"
+  },
+  "bulkUpload": {
+    "title": "批量上传问题",
+    "instructions": "上传包含问题数组的 JSON 文件。每个问题应包含：",
+    "requiredFields": "title（必填）、body、labels（数组）、assignees（数组）",
+    "example": "示例：",
+    "selectRepo": "请先选择一个仓库",
+    "selectFile": "选择 JSON 文件",
+    "uploading": "上传问题中... {{progress}}%",
+    "results": "上传结果",
+    "successful": "{{count}} 个成功",
+    "failed": "{{count}} 个失败",
+    "createdAs": "已创建为问题 #{{number}}",
+    "error": "错误：{{error}}",
+    "errorProcess": "处理文件失败：{{error}}",
+    "errorArray": "JSON 文件必须包含问题数组",
+    "errorNoRepo": "请先选择一个仓库"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误"
+  }
+}

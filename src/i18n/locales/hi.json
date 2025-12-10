@@ -1,0 +1,90 @@
+{
+  "app": {
+    "title": "IssueWizard"
+  },
+  "login": {
+    "title": "IssueWizard",
+    "subtitle": "GitHub इश्यू को आसानी से प्रबंधित करें",
+    "tokenLabel": "GitHub व्यक्तिगत एक्सेस टोकन",
+    "tokenHelper": "अपना GitHub व्यक्तिगत एक्सेस टोकन repo स्कोप के साथ दर्ज करें",
+    "connectButton": "GitHub से कनेक्ट करें",
+    "noToken": "टोकन नहीं है?",
+    "createToken": "यहाँ एक बनाएं"
+  },
+  "dashboard": {
+    "newIssue": "नया इश्यू",
+    "bulkUpload": "थोक अपलोड",
+    "logout": "लॉगआउट"
+  },
+  "repositorySelector": {
+    "title": "एक रिपॉज़िटरी चुनें",
+    "noRepos": "कोई रिपॉज़िटरी नहीं मिली। पहले GitHub पर एक रिपॉज़िटरी बनाएं।",
+    "noDescription": "कोई विवरण नहीं",
+    "private": "निजी"
+  },
+  "issueList": {
+    "title": "इश्यू",
+    "selectRepo": "कृपया इश्यू देखने के लिए एक रिपॉज़िटरी चुनें।",
+    "noIssues": "इस रिपॉज़िटरी में कोई इश्यू नहीं मिला।",
+    "edit": "संपादित करें",
+    "closeIssue": "इश्यू बंद करें",
+    "confirmClose": "क्या आप वाकई इश्यू #{{number}} को बंद करना चाहते हैं?",
+    "openedBy": "{{user}} द्वारा खोला गया • {{state}}",
+    "errorLoad": "इश्यू लोड करने में विफल: {{error}}",
+    "errorClose": "इश्यू बंद करने में विफल: {{error}}"
+  },
+  "issueDetail": {
+    "backToIssues": "इश्यू पर वापस जाएं",
+    "editIssue": "इश्यू संपादित करें",
+    "opened": "{{user}} द्वारा खोला गया",
+    "description": "विवरण",
+    "noDescription": "कोई विवरण प्रदान नहीं किया गया।",
+    "assignees": "असाइनी",
+    "created": "बनाया गया: {{date}}",
+    "updated": "अपडेट किया गया: {{date}}",
+    "selectRepo": "कृपया पहले एक रिपॉज़िटरी चुनें।",
+    "notFound": "इश्यू नहीं मिला।",
+    "errorLoad": "इश्यू लोड करने में विफल: {{error}}",
+    "open": "खुला",
+    "closed": "बंद"
+  },
+  "issueEditor": {
+    "back": "वापस",
+    "editTitle": "इश्यू #{{number}} संपादित करें",
+    "createTitle": "नया इश्यू बनाएं",
+    "titleLabel": "शीर्षक",
+    "descriptionLabel": "विवरण",
+    "labelsLabel": "लेबल",
+    "stateLabel": "स्थिति",
+    "stateOpen": "खुला",
+    "stateClosed": "बंद",
+    "saveButton": "इश्यू सहेजें",
+    "saving": "सहेजा जा रहा है...",
+    "cancel": "रद्द करें",
+    "selectRepo": "कृपया पहले एक रिपॉज़िटरी चुनें।",
+    "titleRequired": "शीर्षक आवश्यक है",
+    "errorLoad": "इश्यू लोड करने में विफल: {{error}}",
+    "errorSave": "इश्यू सहेजने में विफल: {{error}}"
+  },
+  "bulkUpload": {
+    "title": "इश्यू का थोक अपलोड",
+    "instructions": "इश्यू की एक सरणी वाली JSON फ़ाइल अपलोड करें। प्रत्येक इश्यू में होना चाहिए:",
+    "requiredFields": "title (आवश्यक), body, labels (सरणी), assignees (सरणी)",
+    "example": "उदाहरण:",
+    "selectRepo": "कृपया पहले एक रिपॉज़िटरी चुनें",
+    "selectFile": "JSON फ़ाइल चुनें",
+    "uploading": "इश्यू अपलोड हो रहे हैं... {{progress}}%",
+    "results": "अपलोड परिणाम",
+    "successful": "{{count}} सफल",
+    "failed": "{{count}} विफल",
+    "createdAs": "इश्यू #{{number}} के रूप में बनाया गया",
+    "error": "त्रुटि: {{error}}",
+    "errorProcess": "फ़ाइल प्रोसेस करने में विफल: {{error}}",
+    "errorArray": "JSON फ़ाइल में इश्यू की एक सरणी होनी चाहिए",
+    "errorNoRepo": "कृपया पहले एक रिपॉज़िटरी चुनें"
+  },
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि"
+  }
+}

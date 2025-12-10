@@ -1,0 +1,90 @@
+{
+  "app": {
+    "title": "IssueWizard"
+  },
+  "login": {
+    "title": "IssueWizard",
+    "subtitle": "GitHubイシューを簡単に管理",
+    "tokenLabel": "GitHub個人アクセストークン",
+    "tokenHelper": "repoスコープを持つGitHub個人アクセストークンを入力してください",
+    "connectButton": "GitHubに接続",
+    "noToken": "トークンをお持ちでないですか？",
+    "createToken": "ここで作成"
+  },
+  "dashboard": {
+    "newIssue": "新しいイシュー",
+    "bulkUpload": "一括アップロード",
+    "logout": "ログアウト"
+  },
+  "repositorySelector": {
+    "title": "リポジトリを選択",
+    "noRepos": "リポジトリが見つかりませんでした。まずGitHubでリポジトリを作成してください。",
+    "noDescription": "説明なし",
+    "private": "プライベート"
+  },
+  "issueList": {
+    "title": "イシュー",
+    "selectRepo": "イシューを表示するにはリポジトリを選択してください。",
+    "noIssues": "このリポジトリにイシューが見つかりませんでした。",
+    "edit": "編集",
+    "closeIssue": "イシューをクローズ",
+    "confirmClose": "イシュー #{{number}} をクローズしてもよろしいですか？",
+    "openedBy": "{{user}}が開設 • {{state}}",
+    "errorLoad": "イシューの読み込みに失敗しました：{{error}}",
+    "errorClose": "イシューのクローズに失敗しました：{{error}}"
+  },
+  "issueDetail": {
+    "backToIssues": "イシューに戻る",
+    "editIssue": "イシューを編集",
+    "opened": "{{user}}が開設",
+    "description": "説明",
+    "noDescription": "説明が提供されていません。",
+    "assignees": "担当者",
+    "created": "作成日：{{date}}",
+    "updated": "更新日：{{date}}",
+    "selectRepo": "まずリポジトリを選択してください。",
+    "notFound": "イシューが見つかりません。",
+    "errorLoad": "イシューの読み込みに失敗しました：{{error}}",
+    "open": "オープン",
+    "closed": "クローズ"
+  },
+  "issueEditor": {
+    "back": "戻る",
+    "editTitle": "イシュー #{{number}} を編集",
+    "createTitle": "新しいイシューを作成",
+    "titleLabel": "タイトル",
+    "descriptionLabel": "説明",
+    "labelsLabel": "ラベル",
+    "stateLabel": "状態",
+    "stateOpen": "オープン",
+    "stateClosed": "クローズ",
+    "saveButton": "イシューを保存",
+    "saving": "保存中...",
+    "cancel": "キャンセル",
+    "selectRepo": "まずリポジトリを選択してください。",
+    "titleRequired": "タイトルは必須です",
+    "errorLoad": "イシューの読み込みに失敗しました：{{error}}",
+    "errorSave": "イシューの保存に失敗しました：{{error}}"
+  },
+  "bulkUpload": {
+    "title": "イシューの一括アップロード",
+    "instructions": "イシューの配列を含むJSONファイルをアップロードしてください。各イシューには以下が必要です：",
+    "requiredFields": "title（必須）、body、labels（配列）、assignees（配列）",
+    "example": "例：",
+    "selectRepo": "まずリポジトリを選択してください",
+    "selectFile": "JSONファイルを選択",
+    "uploading": "イシューをアップロード中... {{progress}}%",
+    "results": "アップロード結果",
+    "successful": "{{count}}件成功",
+    "failed": "{{count}}件失敗",
+    "createdAs": "イシュー #{{number}} として作成されました",
+    "error": "エラー：{{error}}",
+    "errorProcess": "ファイルの処理に失敗しました：{{error}}",
+    "errorArray": "JSONファイルにはイシューの配列が含まれている必要があります",
+    "errorNoRepo": "まずリポジトリを選択してください"
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラー"
+  }
+}

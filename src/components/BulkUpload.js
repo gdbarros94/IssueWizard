@@ -12,10 +12,12 @@ import {
   Chip,
 } from '@mui/material';
 import { CloudUpload, CheckCircle, Error } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import { useApp } from '../contexts/AppContext';
 import githubApi from '../services/githubApi';
 
 const BulkUpload = () => {
+  const { t } = useTranslation();
   const { selectedRepo, setError } = useApp();
   const [uploading, setUploading] = useState(false);
   const [results, setResults] = useState(null);
@@ -26,7 +28,7 @@ const BulkUpload = () => {
     if (!file) return;
 
     if (!selectedRepo) {
-      setError('Please select a repository first');
+      setError(t('bulkUpload.errorNoRepo'));
       return;
     }
 
@@ -35,7 +37,7 @@ const BulkUpload = () => {
       const issues = JSON.parse(text);
 
       if (!Array.isArray(issues)) {
-        setError('JSON file must contain an array of issues');
+        setError(t('bulkUpload.errorArray'));
         return;
       }
 
@@ -65,7 +67,7 @@ const BulkUpload = () => {
 
       setResults(uploadResults);
     } catch (err) {
-      setError('Failed to process file: ' + err.message);
+      setError(t('bulkUpload.errorProcess', { error: err.message }));
     } finally {
       setUploading(false);
       event.target.value = ''; // Reset file input
@@ -83,17 +85,16 @@ const BulkUpload = () => {
   return (
     <Paper sx={{ p: 3 }}>
       <Typography variant="h5" gutterBottom>
-        Bulk Upload Issues
+        {t('bulkUpload.title')}
       </Typography>
 
       <Alert severity="info" sx={{ mb: 3 }}>
-        Upload a JSON file containing an array of issues. Each issue should have:
+        {t('bulkUpload.instructions')}
         <br />
-        <strong>title</strong> (required), <strong>body</strong>, <strong>labels</strong> (array), 
-        <strong>assignees</strong> (array)
+        <strong>{t('bulkUpload.requiredFields')}</strong>
         <br />
         <br />
-        Example:
+        {t('bulkUpload.example')}
         <pre style={{ fontSize: '0.85em', marginTop: 8 }}>
 {`[
   {
@@ -107,7 +108,7 @@ const BulkUpload = () => {
 
       {!selectedRepo && (
         <Alert severity="warning" sx={{ mb: 2 }}>
-          Please select a repository first
+          {t('bulkUpload.selectRepo')}
         </Alert>
       )}
 
@@ -128,7 +129,7 @@ const BulkUpload = () => {
             disabled={!selectedRepo || uploading}
             size="large"
           >
-            Select JSON File
+            {t('bulkUpload.selectFile')}
           </Button>
         </label>
       </Box>
@@ -136,7 +137,7 @@ const BulkUpload = () => {
       {uploading && (
         <Box sx={{ mb: 3 }}>
           <Typography variant="body2" gutterBottom>
-            Uploading issues... {Math.round(progress)}%
+            {t('bulkUpload.uploading', { progress: Math.round(progress) })}
           </Typography>
           <LinearProgress variant="determinate" value={progress} />
         </Box>
@@ -145,17 +146,17 @@ const BulkUpload = () => {
       {results && (
         <Box>
           <Typography variant="h6" gutterBottom>
-            Upload Results
+            {t('bulkUpload.results')}
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
             <Chip
               icon={<CheckCircle />}
-              label={`${getSuccessCount()} Successful`}
+              label={t('bulkUpload.successful', { count: getSuccessCount() })}
               color="success"
             />
             <Chip
               icon={<Error />}
-              label={`${getFailureCount()} Failed`}
+              label={t('bulkUpload.failed', { count: getFailureCount() })}
               color="error"
             />
           </Box>
@@ -172,8 +173,8 @@ const BulkUpload = () => {
                   primary={result.data.title}
                   secondary={
                     result.success
-                      ? `Created as issue #${result.issue.number}`
-                      : `Error: ${result.error}`
+                      ? t('bulkUpload.createdAs', { number: result.issue.number })
+                      : t('bulkUpload.error', { error: result.error })
                   }
                 />
               </ListItem>

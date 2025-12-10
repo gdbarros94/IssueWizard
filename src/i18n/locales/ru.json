@@ -1,0 +1,90 @@
+{
+  "app": {
+    "title": "IssueWizard"
+  },
+  "login": {
+    "title": "IssueWizard",
+    "subtitle": "Управляйте issues GitHub с лёгкостью",
+    "tokenLabel": "Персональный токен доступа GitHub",
+    "tokenHelper": "Введите ваш персональный токен доступа GitHub с областью repo",
+    "connectButton": "Подключиться к GitHub",
+    "noToken": "Нет токена?",
+    "createToken": "Создайте его здесь"
+  },
+  "dashboard": {
+    "newIssue": "Новая Issue",
+    "bulkUpload": "Массовая Загрузка",
+    "logout": "Выйти"
+  },
+  "repositorySelector": {
+    "title": "Выберите Репозиторий",
+    "noRepos": "Репозитории не найдены. Сначала создайте репозиторий на GitHub.",
+    "noDescription": "Без описания",
+    "private": "Приватный"
+  },
+  "issueList": {
+    "title": "Issues",
+    "selectRepo": "Пожалуйста, выберите репозиторий для просмотра issues.",
+    "noIssues": "В этом репозитории не найдено issues.",
+    "edit": "Редактировать",
+    "closeIssue": "Закрыть Issue",
+    "confirmClose": "Вы уверены, что хотите закрыть issue #{{number}}?",
+    "openedBy": "Открыта {{user}} • {{state}}",
+    "errorLoad": "Не удалось загрузить issues: {{error}}",
+    "errorClose": "Не удалось закрыть issue: {{error}}"
+  },
+  "issueDetail": {
+    "backToIssues": "Вернуться к Issues",
+    "editIssue": "Редактировать Issue",
+    "opened": "открыта {{user}}",
+    "description": "Описание",
+    "noDescription": "Описание не предоставлено.",
+    "assignees": "Назначенные",
+    "created": "Создана: {{date}}",
+    "updated": "Обновлена: {{date}}",
+    "selectRepo": "Пожалуйста, сначала выберите репозиторий.",
+    "notFound": "Issue не найдена.",
+    "errorLoad": "Не удалось загрузить issue: {{error}}",
+    "open": "открыта",
+    "closed": "закрыта"
+  },
+  "issueEditor": {
+    "back": "Назад",
+    "editTitle": "Редактировать Issue #{{number}}",
+    "createTitle": "Создать Новую Issue",
+    "titleLabel": "Заголовок",
+    "descriptionLabel": "Описание",
+    "labelsLabel": "Метки",
+    "stateLabel": "Состояние",
+    "stateOpen": "Открыта",
+    "stateClosed": "Закрыта",
+    "saveButton": "Сохранить Issue",
+    "saving": "Сохранение...",
+    "cancel": "Отмена",
+    "selectRepo": "Пожалуйста, сначала выберите репозиторий.",
+    "titleRequired": "Заголовок обязателен",
+    "errorLoad": "Не удалось загрузить issue: {{error}}",
+    "errorSave": "Не удалось сохранить issue: {{error}}"
+  },
+  "bulkUpload": {
+    "title": "Массовая Загрузка Issues",
+    "instructions": "Загрузите JSON-файл, содержащий массив issues. Каждая issue должна иметь:",
+    "requiredFields": "title (обязательно), body, labels (массив), assignees (массив)",
+    "example": "Пример:",
+    "selectRepo": "Пожалуйста, сначала выберите репозиторий",
+    "selectFile": "Выбрать JSON-файл",
+    "uploading": "Загрузка issues... {{progress}}%",
+    "results": "Результаты Загрузки",
+    "successful": "{{count}} Успешных",
+    "failed": "{{count}} Неудачных",
+    "createdAs": "Создана как issue #{{number}}",
+    "error": "Ошибка: {{error}}",
+    "errorProcess": "Не удалось обработать файл: {{error}}",
+    "errorArray": "JSON-файл должен содержать массив issues",
+    "errorNoRepo": "Пожалуйста, сначала выберите репозиторий"
+  },
+  "common": {
+    "loading": "Загрузка...",
+    "error": "Ошибка"
+  }
+}

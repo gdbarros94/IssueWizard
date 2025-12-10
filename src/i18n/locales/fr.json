@@ -1,0 +1,90 @@
+{
+  "app": {
+    "title": "IssueWizard"
+  },
+  "login": {
+    "title": "IssueWizard",
+    "subtitle": "Gérez les issues GitHub avec facilité",
+    "tokenLabel": "Jeton d'Accès Personnel GitHub",
+    "tokenHelper": "Entrez votre jeton d'accès personnel GitHub avec la portée repo",
+    "connectButton": "Se connecter à GitHub",
+    "noToken": "Vous n'avez pas de jeton ?",
+    "createToken": "Créez-en un ici"
+  },
+  "dashboard": {
+    "newIssue": "Nouvelle Issue",
+    "bulkUpload": "Téléchargement en Masse",
+    "logout": "Se Déconnecter"
+  },
+  "repositorySelector": {
+    "title": "Sélectionnez un Dépôt",
+    "noRepos": "Aucun dépôt trouvé. Créez d'abord un dépôt sur GitHub.",
+    "noDescription": "Aucune description",
+    "private": "Privé"
+  },
+  "issueList": {
+    "title": "Issues",
+    "selectRepo": "Veuillez sélectionner un dépôt pour voir les issues.",
+    "noIssues": "Aucune issue trouvée dans ce dépôt.",
+    "edit": "Modifier",
+    "closeIssue": "Fermer l'Issue",
+    "confirmClose": "Êtes-vous sûr de vouloir fermer l'issue #{{number}} ?",
+    "openedBy": "Ouverte par {{user}} • {{state}}",
+    "errorLoad": "Échec du chargement des issues : {{error}}",
+    "errorClose": "Échec de la fermeture de l'issue : {{error}}"
+  },
+  "issueDetail": {
+    "backToIssues": "Retour aux Issues",
+    "editIssue": "Modifier l'Issue",
+    "opened": "ouverte par {{user}}",
+    "description": "Description",
+    "noDescription": "Aucune description fournie.",
+    "assignees": "Assignés",
+    "created": "Créée : {{date}}",
+    "updated": "Mise à jour : {{date}}",
+    "selectRepo": "Veuillez d'abord sélectionner un dépôt.",
+    "notFound": "Issue non trouvée.",
+    "errorLoad": "Échec du chargement de l'issue : {{error}}",
+    "open": "ouverte",
+    "closed": "fermée"
+  },
+  "issueEditor": {
+    "back": "Retour",
+    "editTitle": "Modifier l'Issue #{{number}}",
+    "createTitle": "Créer une Nouvelle Issue",
+    "titleLabel": "Titre",
+    "descriptionLabel": "Description",
+    "labelsLabel": "Étiquettes",
+    "stateLabel": "État",
+    "stateOpen": "Ouverte",
+    "stateClosed": "Fermée",
+    "saveButton": "Enregistrer l'Issue",
+    "saving": "Enregistrement...",
+    "cancel": "Annuler",
+    "selectRepo": "Veuillez d'abord sélectionner un dépôt.",
+    "titleRequired": "Le titre est obligatoire",
+    "errorLoad": "Échec du chargement de l'issue : {{error}}",
+    "errorSave": "Échec de l'enregistrement de l'issue : {{error}}"
+  },
+  "bulkUpload": {
+    "title": "Téléchargement en Masse d'Issues",
+    "instructions": "Téléchargez un fichier JSON contenant un tableau d'issues. Chaque issue doit avoir :",
+    "requiredFields": "title (obligatoire), body, labels (tableau), assignees (tableau)",
+    "example": "Exemple :",
+    "selectRepo": "Veuillez d'abord sélectionner un dépôt",
+    "selectFile": "Sélectionner un Fichier JSON",
+    "uploading": "Téléchargement des issues... {{progress}}%",
+    "results": "Résultats du Téléchargement",
+    "successful": "{{count}} Réussies",
+    "failed": "{{count}} Échouées",
+    "createdAs": "Créée en tant qu'issue #{{number}}",
+    "error": "Erreur : {{error}}",
+    "errorProcess": "Échec du traitement du fichier : {{error}}",
+    "errorArray": "Le fichier JSON doit contenir un tableau d'issues",
+    "errorNoRepo": "Veuillez d'abord sélectionner un dépôt"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur"
+  }
+}

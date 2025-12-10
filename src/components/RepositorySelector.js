@@ -12,9 +12,11 @@ import {
   Alert,
 } from '@mui/material';
 import { FolderOutlined } from '@mui/icons-material';
+import { useTranslation } from 'react-i18next';
 import { useApp } from '../contexts/AppContext';
 
 const RepositorySelector = () => {
+  const { t } = useTranslation();
   const { repositories, selectedRepo, selectRepository, loading } = useApp();
 
   if (loading) {
@@ -28,7 +30,7 @@ const RepositorySelector = () => {
   if (repositories.length === 0) {
     return (
       <Alert severity="info" sx={{ m: 2 }}>
-        No repositories found. Create a repository on GitHub first.
+        {t('repositorySelector.noRepos')}
       </Alert>
     );
   }
@@ -37,7 +39,7 @@ const RepositorySelector = () => {
     <Paper sx={{ p: 2 }}>
       <Typography variant="h6" gutterBottom sx={{ display: 'flex', alignItems: 'center' }}>
         <FolderOutlined sx={{ mr: 1 }} />
-        Select a Repository
+        {t('repositorySelector.title')}
       </Typography>
       <List sx={{ maxHeight: 400, overflow: 'auto' }}>
         {repositories.map((repo) => (
@@ -48,10 +50,10 @@ const RepositorySelector = () => {
             >
               <ListItemText
                 primary={repo.full_name}
-                secondary={repo.description || 'No description'}
+                secondary={repo.description || t('repositorySelector.noDescription')}
               />
               {repo.private && (
-                <Chip label="Private" size="small" color="secondary" sx={{ ml: 1 }} />
+                <Chip label={t('repositorySelector.private')} size="small" color="secondary" sx={{ ml: 1 }} />
               )}
             </ListItemButton>
           </ListItem>

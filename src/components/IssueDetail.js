@@ -11,10 +11,12 @@ import {
 } from '@mui/material';
 import { ArrowBack, Edit } from '@mui/icons-material';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useApp } from '../contexts/AppContext';
 import githubApi from '../services/githubApi';
 
 const IssueDetail = () => {
+  const { t } = useTranslation();
   const { issueNumber } = useParams();
   const { selectedRepo, setError } = useApp();
   const [issue, setIssue] = useState(null);
@@ -36,7 +38,7 @@ const IssueDetail = () => {
       const issueData = await githubApi.getIssue(owner, repo, issueNumber);
       setIssue(issueData);
     } catch (err) {
-      setError('Failed to load issue: ' + err.message);
+      setError(t('issueDetail.errorLoad', { error: err.message }));
     } finally {
       setLoading(false);
     }
@@ -45,7 +47,7 @@ const IssueDetail = () => {
   if (!selectedRepo) {
     return (
       <Alert severity="info" sx={{ m: 2 }}>
-        Please select a repository first.
+        {t('issueDetail.selectRepo')}
       </Alert>
     );
   }
@@ -61,7 +63,7 @@ const IssueDetail = () => {
   if (!issue) {
     return (
       <Alert severity="error" sx={{ m: 2 }}>
-        Issue not found.
+        {t('issueDetail.notFound')}
       </Alert>
     );
   }
@@ -70,14 +72,14 @@ const IssueDetail = () => {
     <Paper sx={{ p: 3 }}>
       <Box sx={{ mb: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Button startIcon={<ArrowBack />} onClick={() => navigate('/')}>
-          Back to Issues
+          {t('issueDetail.backToIssues')}
         </Button>
         <Button
           startIcon={<Edit />}
           variant="outlined"
           onClick={() => navigate(`/issue/${issueNumber}/edit`)}
         >
-          Edit Issue
+          {t('issueDetail.editIssue')}
         </Button>
       </Box>
 
@@ -86,13 +88,13 @@ const IssueDetail = () => {
           {issue.title}
         </Typography>
         <Typography variant="subtitle2" color="text.secondary">
-          #{issue.number} opened by {issue.user.login}
+          #{issue.number} {t('issueDetail.opened', { user: issue.user.login })}
         </Typography>
       </Box>
 
       <Box sx={{ mb: 2, display: 'flex', gap: 1, flexWrap: 'wrap' }}>
         <Chip
-          label={issue.state}
+          label={t(`issueDetail.${issue.state}`)}
           color={issue.state === 'open' ? 'success' : 'default'}
           size="small"
         />
@@ -113,7 +115,7 @@ const IssueDetail = () => {
 
       <Box>
         <Typography variant="h6" gutterBottom>
-          Description
+          {t('issueDetail.description')}
         </Typography>
         <Typography
           variant="body1"
@@ -124,14 +126,14 @@ const IssueDetail = () => {
             borderRadius: 1,
           }}
         >
-          {issue.body || 'No description provided.'}
+          {issue.body || t('issueDetail.noDescription')}
         </Typography>
       </Box>
 
       {issue.assignees && issue.assignees.length > 0 && (
         <Box sx={{ mt: 3 }}>
           <Typography variant="h6" gutterBottom>
-            Assignees
+            {t('issueDetail.assignees')}
           </Typography>
           {issue.assignees.map((assignee) => (
             <Chip
@@ -146,9 +148,9 @@ const IssueDetail = () => {
 
       <Box sx={{ mt: 3 }}>
         <Typography variant="caption" color="text.secondary">
-          Created: {new Date(issue.created_at).toLocaleString()}
+          {t('issueDetail.created', { date: new Date(issue.created_at).toLocaleString() })}
           {issue.updated_at !== issue.created_at && (
-            <> • Updated: {new Date(issue.updated_at).toLocaleString()}</>
+            <> • {t('issueDetail.updated', { date: new Date(issue.updated_at).toLocaleString() })}</>
           )}
         </Typography>
       </Box>
